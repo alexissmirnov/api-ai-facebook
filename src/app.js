@@ -23,7 +23,7 @@ var janis = require('janis');
 var apiKey = process.env.JANIS_API_KEY; // <= key provided by janis for Slack
 var clientKey = process.env.JANIS_CLIENT_KEY; // <= key provided by janis for Slack
 var botPlatform = 'messenger'; // <= possible values: 'messenger', 'slack', 'microsoft'
-var janis = janis(apiKey, clientKey, {platform: botPlatform, token:FB_PAGE_ACCESS_TOKEN});
+var janis = janis('8st8H5dKZ6t2CjnEQuSsuG5YuDiarU696EAHcUWebtK', 'sVhcyza5lMX4CqLRWSkGMeMN6ORRhuSWmABZHZ7Ug2Y', {platform: botPlatform, token:FB_PAGE_ACCESS_TOKEN});
 
 class FacebookBot {
     constructor() {
