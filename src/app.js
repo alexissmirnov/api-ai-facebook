@@ -19,11 +19,11 @@ const FACEBOOK_LOCATION = "FACEBOOK_LOCATION";
 const FACEBOOK_WELCOME = "FACEBOOK_WELCOME";
 
 // janis
-// var janis = require('janis');
-// var apiKey = process.env.JANIS_API_KEY; // <= key provided by janis for Slack
-// var clientKey = process.env.JANIS_CLIENT_KEY; // <= key provided by janis for Slack
-// var botPlatform = 'messenger'; // <= possible values: 'messenger', 'slack', 'microsoft'
-// var janis = janis(apiKey, clientKey, {platform: botPlatform, token:FB_PAGE_ACCESS_TOKEN});
+var janis = require('janis');
+var apiKey = process.env.JANIS_API_KEY; // <= key provided by janis for Slack
+var clientKey = process.env.JANIS_CLIENT_KEY; // <= key provided by janis for Slack
+var botPlatform = 'messenger'; // <= possible values: 'messenger', 'slack', 'microsoft'
+var janis = janis(apiKey, clientKey, {platform: botPlatform, token:FB_PAGE_ACCESS_TOKEN});
 
 class FacebookBot {
     constructor() {
