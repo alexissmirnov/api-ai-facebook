@@ -308,6 +308,7 @@ class FacebookBot {
             }
 
             console.log("Text", text);
+
             //send user's text to api.ai service
             let apiaiRequest = this.apiAiService.textRequest(text,
                 {
@@ -383,6 +384,13 @@ class FacebookBot {
     }
 
     sendFBMessage(sender, messageData) {
+        janis.hopOut({
+            sender: {id: '123'},
+            recipient: {id: sender},
+            message: messageData,
+            timestamp: 1458692752478
+        });
+
         return new Promise((resolve, reject) => {
             request({
                 url: 'https://graph.facebook.com/v2.6/me/messages',
@@ -538,8 +546,10 @@ app.post('/webhook/', (req, res) => {
                                     });
                                 }
                             }
-
-                            facebookBot.processMessageEvent(event);
+                            janis.hopIn(data, function(isPaused) {
+                              if (isPaused) return;
+                              facebookBot.processMessageEvent(event);
+                            })
                         } else if (event.postback && event.postback.payload) {
                             if (event.postback.payload === "FACEBOOK_WELCOME") {
                                 facebookBot.processFacebookEvent(event);
