@@ -18,6 +18,14 @@ const FB_TEXT_LIMIT = 640;
 const FACEBOOK_LOCATION = "FACEBOOK_LOCATION";
 const FACEBOOK_WELCOME = "FACEBOOK_WELCOME";
 
+// janis
+var janis = require('janis');
+var apiKey = process.env.JANIS_API_KEY; // <= key provided by janis for Slack
+var clientKey = process.env.JANIS_CLIENT_KEY; // <= key provided by janis for Slack
+var botPlatform = 'messenger'; // <= possible values: 'messenger', 'slack', 'microsoft'
+var token = process.env.PAGE_ACCESS_TOKEN; // <= only required for Messenger bots.
+var janis = janis(apiKey, clientKey, {platform: botPlatform, token:token});
+
 class FacebookBot {
     constructor() {
         this.apiAiService = apiai(APIAI_ACCESS_TOKEN, {language: APIAI_LANG, requestSource: "fb"});
