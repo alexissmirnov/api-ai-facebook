@@ -7,20 +7,28 @@
   "env": {
     "APIAI_ACCESS_TOKEN": {
       "description": "Client access token for Api.ai",
-      "value": ""
+      "value": "823143bc340b4f48854be82df98bf288"
     },
     "FB_VERIFY_TOKEN": {
       "description": "Verification code",
-      "value": ""
+      "value": "EAADqzD3Q6tsBANkBeFudzeT8IYZCxD2yva7gMZAZCRZASGR3mqW3yXL9ZANl5UMSdTfxxdz4jdZBqtteDLbzXURDKnWoWvqgCrpf85NlszxPtXG5cbGI4bfdYVFqwtp1R0irLZAAB6rDYIc42clhmceanoWbZCMio6AhfQZBIDGIOZBgZDZD"
     },
     "FB_PAGE_ACCESS_TOKEN": {
       "description": "Page Access Token",
-      "value": ""
+      "value": "EAADqzD3Q6tsBANkBeFudzeT8IYZCxD2yva7gMZAZCRZASGR3mqW3yXL9ZANl5UMSdTfxxdz4jdZBqtteDLbzXURDKnWoWvqgCrpf85NlszxPtXG5cbGI4bfdYVFqwtp1R0irLZAAB6rDYIc42clhmceanoWbZCMio6AhfQZBIDGIOZBgZDZD"
     },
     "APIAI_LANG": {
       "description": "Agent language",
-      "value": "",
+      "value": "en",
       "required": false
+    },
+    "JANIS_API_KEY": {
+      "description": "Janis API Key",
+      "value": "8st8H5dKZ6t2CjnEQuSsuG5YuDiarU696EAHcUWebtK"
+    },
+    "JANIS_CLIENT_KEY": {
+      "description": "Janis Client Key",
+      "value": "sVhcyza5lMX4CqLRWSkGMeMN6ORRhuSWmABZHZ7Ug2Y"
     }
   },
   "engines": {
