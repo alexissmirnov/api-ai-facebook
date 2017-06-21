@@ -25,11 +25,16 @@ var clientKey = process.env.JANIS_CLIENT_KEY; // <= key provided by janis for Sl
 var botPlatform = 'messenger'; // <= possible values: 'messenger', 'slack', 'microsoft'
 var janis = janis('8st8H5dKZ6t2CjnEQuSsuG5YuDiarU696EAHcUWebtK', 'sVhcyza5lMX4CqLRWSkGMeMN6ORRhuSWmABZHZ7Ug2Y', {platform: botPlatform, token:FB_PAGE_ACCESS_TOKEN});
 
+
 class FacebookBot {
     constructor() {
         this.apiAiService = apiai(APIAI_ACCESS_TOKEN, {language: APIAI_LANG, requestSource: "fb"});
         this.sessionIds = new Map();
         this.messagesDelay = 200;
+        // Handle forwarding the messages sent by a human through your bot
+        janis.on('chat response', function (outgoingMessage) {
+            this.sendFBMessage(outgoingMessage.address, outgoingMessage);  // <= example of bot sending message
+        });
     }
 
 
@@ -546,7 +551,7 @@ app.post('/webhook/', (req, res) => {
                                     });
                                 }
                             }
-                            janis.hopIn(data, function(isPaused) {
+                            janis.hopIn(req.body, function(isPaused) {
                               if (isPaused) return;
                               facebookBot.processMessageEvent(event);
                             })
